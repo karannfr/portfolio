@@ -29,6 +29,7 @@ function CustomCursor() {
         transform: `translate(${position.x + 4}px, ${position.y + 4}px)`,
         transition: 'transform 0.05s linear',
       }}
+      className='hidden md:block'
     />
   );
 }
