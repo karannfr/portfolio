@@ -16,7 +16,7 @@ const RootLayout = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    },8000)
+    },6750)
   },[])
   return (
     isLoading ?
@@ -24,7 +24,7 @@ const RootLayout = () => {
       <DotLottieReact
         src="https://lottie.host/644d45db-d6f9-4d3a-bc67-4bd35117132f/njF5KyG19W.lottie"
         autoplay
-        className="sm:w-[1024px] md:w-[2048px]"
+        className=":w-[1024px] md:w-[2048px]"
       />
     </div>
     :
