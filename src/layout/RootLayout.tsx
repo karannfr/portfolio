@@ -16,7 +16,7 @@ const RootLayout = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    },12000)
+    },8000)
   },[])
   return (
     isLoading ?
