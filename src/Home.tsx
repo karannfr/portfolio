@@ -27,7 +27,7 @@ const Home = () => {
             </p>
             <div className='flex flex-row gap-4'>
               <button className='px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]' onClick={scrollToBottom}>Let's Talk</button>
-              <a href="" target='_blank' className='px-4 sm:px-10 sm:text-xl py-4 bg-transparent border border-white text-white rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-500/15 hover:cursor-[url(/hover.svg),_pointer]'>View Resume</a>
+              <a href="./Karan_s_Resume_January_2025.pdf" target='_blank' className='px-4 sm:px-10 sm:text-xl py-4 bg-transparent border border-white text-white rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-500/15 hover:cursor-[url(/hover.svg),_pointer]'>View Resume</a>
             </div>
           </div>
           <ProfileCard
