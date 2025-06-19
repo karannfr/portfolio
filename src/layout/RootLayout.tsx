@@ -12,7 +12,7 @@ const RootLayout = () => {
     setDate(new Date());
     setInterval(() => {
       setDate(new Date());
-    },60000)
+    },6000)
   },[]) 
   useEffect(() => {
     setTimeout(() => {

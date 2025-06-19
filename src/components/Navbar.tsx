@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { useAnimationFrame } from 'motion/react';
 
 const weekDays: Record<string, string> = {
   Mon: "Monday",
@@ -12,20 +13,22 @@ const weekDays: Record<string, string> = {
 };
 
 type NavbarProps = {
-  date: Date | null;
+  date: Date | null
 }
 
 const Navbar = ({date} :NavbarProps) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useAnimationFrame((t) => {
+    if (!ref.current) return
+    const visible = Math.floor(t / 500 ) % 2 === 0;
+    ref.current.style.opacity = visible ? '1' : '0';
+  })
   // 'Thu Jun 19 2025 00:31:00 GMT+0530 (India Standard Time)'
   const [weekday, setWeekday] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
   const [ddmmyy, setDDMMYY] = useState<string | null>(null);
   const [timezone, setTimeZone] = useState<string | null>(null);
-  const [blink, setBlink] = useState(true);
   useEffect(() => {
-    setInterval(() => {
-      setBlink(prev => !prev)
-    },700)
     if(date == null) return
     const parsedDate = date;
 
@@ -59,7 +62,9 @@ const Navbar = ({date} :NavbarProps) => {
     <nav className='flex justify-between items-center py-6 px-8 sm:px-16 w-full border-b border-b-white/5 bg-transparent'>
       <div className='bg-purple-400 rounded-[100px] p-1'><img src="./memoji.png" alt="memoji"  className='h-[56px] w-[56px]'/></div>
       <div className='flex flex-row items-center gap-2.5 font-bold'>
-        <div className={`bg-purple-400 rounded-[20px] h-[8px] w-[8px] mr-1.5 sm:block hidden transition-opacity duration-300 ease-in-out ${blink ? 'opacity-100' : 'opacity-0'}`}></div>
+        <div ref={ref}
+          className={`bg-purple-400 rounded-[20px] h-[8px] w-[8px] mr-1.5 sm:block hidden transition-opacity duration-10 ease-in-out`}>
+        </div>
         <div>
           <div>{weekday}</div>
           <div>{ddmmyy}</div>
