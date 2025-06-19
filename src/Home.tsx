@@ -1,6 +1,7 @@
 import Aurora from './components/Aurora'
 import ProfileCard from './components/ProfileCard';
 import { TfiArrowTopRight } from "react-icons/tfi";
+import * as motion from "motion/react-client"
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         speed={0.5}
       />
       <div className='flex flex-col gap-8 py-16 px-8 lg:px-16'>
-        <div className='flex md:flex-row flex-col md:justify-between items-start gap-16'>
+        <div className='flex md:flex-row flex-col md:justify-between items-start gap-16 md:py-36'>
           <div className='flex flex-col md:gap-8 gap-4 items-start'>
             <h1 className='font-bold text-xl sm:text-3xl md:text-3xl lg:text-5xl'>MERN Stack Developer | UI/UX Designer | VITV'26 | Chairperson@CodeChef-VIT</h1>
             <p className="max-w-2xl text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
@@ -42,30 +43,62 @@ const Home = () => {
         <div className='flex flex-col lg:flex-row gap-8 pt-8 lg:pt-16 lg:space-between'>
           <div className="text-xl sm:text-xl md:text-2xl font-semibold">Featured Work</div>
           <div className='flex flex-row flex-wrap gap-8 justify-end'>
-            <div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'>
+            <motion.div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
+               initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.0,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
               <img className="rounded-md"src="/Quiztelify.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>QuizTelify</h1>
+              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Quiztelify</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="" className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </div>
-            <div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'>
+              <a href="https://quiztelify.karnx.dev" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+            </motion.div>
+            <motion.div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
+               initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.0,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
               <img className="rounded-md"src="/Quiztelify.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>QuizTelify</h1>
+              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Quiztelify</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="" className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </div>
-            <div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'>
-              <img className="rounded-md"src="/Quiztelify.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>QuizTelify</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="" className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </div>
-            <div className='flex flex-col items-start gap-4 hover:cursor-[url(./QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'>
-              <img className="rounded-md"src="/Quiztelify.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>QuizTelify</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="" className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </div>
+              <a href="https://quiztelify.karnx.dev" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+            </motion.div>
+            <motion.div className='flex flex-col items-start gap-4 hover:cursor-[url(./codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
+               initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.0,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+              <img className="rounded-md"src="/papers.png" alt="" />
+              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Papers</h1>
+              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Prepare to excel in your CATs and FATs with CodeChef-VIT’s dedicated repository of past exam papers</p>
+              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+            </motion.div>
+            <motion.div className='flex flex-col items-start gap-4 hover:cursor-[url(./codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
+               initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.5,
+                    delay: 0.0,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+              <img className="rounded-md"src="/papers.png" alt="" />
+              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Papers</h1>
+              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Prepare to excel in your CATs and FATs with CodeChef-VIT’s dedicated repository of past exam papers</p>
+              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+            </motion.div>
           </div>
         </div>
       </div>

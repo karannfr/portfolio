@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import Footer from "../components/Footer"
 import { useEffect, useState } from "react"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import SplashCursor from "../components/SplashCursor";
 
 const RootLayout = () => {
   const [date,setDate] = useState<Date | null>(null);
@@ -24,8 +25,9 @@ const RootLayout = () => {
       <DotLottieReact
         src="https://lottie.host/644d45db-d6f9-4d3a-bc67-4bd35117132f/njF5KyG19W.lottie"
         autoplay
-        className=":w-[1024px] md:w-[2048px]"
+        className=":w-[1024px] md:w-[2048px] z-50"
       />
+      <SplashCursor/>
     </div>
     :
     <>

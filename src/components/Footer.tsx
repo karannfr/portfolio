@@ -1,9 +1,9 @@
 import { FiArrowUp } from "react-icons/fi";
 
 const socialLinks = [
-  { label: "LI", href: "https://www.linkedin.com/in/karandugar" },
-  { label: "IG", href: "https://www.instagram.com/yourusername" },
-  { label: "GIT", href: "https://github.com/karandugar" },
+  { label: "LI", href: "https://www.linkedin.com/in/karan-dugar-680b81237/" },
+  { label: "IG", href: "https://www.instagram.com/karanxm__" },
+  { label: "GIT", href: "https://github.com/karannfr" },
   { label: "MAIL", href: "mailto:karandugar27@gmail.com" }
 ];
 
