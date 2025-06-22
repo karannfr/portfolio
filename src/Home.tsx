@@ -100,10 +100,10 @@ const Home = () => {
                     ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-              <img className="rounded-md"src="/papers.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Papers</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Prepare to excel in your CATs and FATs with CodeChef-VIT’s dedicated repository of past exam papers</p>
-              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+              <img className="rounded-md"src="/forreal.png" alt="" />
+              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>ForReal</h1>
+              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>The AI that exposes AI</p>
+              <a href="https://forreal-deploy-build.vercel.app"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>Vew Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
             </motion.div>
           </div>
         </div>
