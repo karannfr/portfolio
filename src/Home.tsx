@@ -46,9 +46,53 @@ const Home = () => {
             className='lg:ml-16 xl:ml-32'
           />
         </div>
-        <div className='flex flex-col lg:flex-row gap-8 pt-8 lg:pt-16 lg:space-between'>
-          <div className="text-xl sm:text-xl md:text-2xl font-semibold">Featured Work</div>
-          <div className='flex flex-row flex-wrap gap-8 justify-end'>
+        <div className="pt-8 lg:pt-16 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12">Tech Stack</h2>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
+            {[
+              { name: 'AI', src: './stack/ai.svg' },
+              { name: 'AWS', src: './stack/aws.svg' },
+              { name: 'C++', src: './stack/c++.svg' },
+              { name: 'Cloudflare', src: './stack/cloudflare.svg' },
+              { name: 'Express.js', src: './stack/expressjs.svg' },
+              { name: 'Framer Motion', src: './stack/framer.svg' },
+              { name: 'Java', src: './stack/java.svg' },
+              { name: 'JavaScript', src: './stack/js.svg' },
+              { name: 'MongoDB', src: './stack/mongodb.svg' },
+              { name: 'Mongoose', src: './stack/mongoose.svg' },
+              { name: 'Next.js', src: './stack/nextjs.svg' },
+              { name: 'Node.js', src: './stack/nodejs.svg' },
+              { name: 'npm', src: './stack/npm2.svg' },
+              { name: 'Python', src: './stack/python.svg' },
+              { name: 'React', src: './stack/react.svg' },
+              { name: 'React Query', src: './stack/reactquery.svg' },
+              { name: 'Tailwind CSS', src: './stack/tailwindcss.svg' },
+              { name: 'TypeScript', src: './stack/typescript.svg' },
+              { name: 'Vercel', src: './stack/vercel.svg' },
+              { name: 'Vite.js', src: './stack/vitejs.svg' }
+            ].map((tech, index) => (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.0,
+                    delay: 0.0,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                key={index}
+                className="group bg-zinc-900/40 backdrop-blur-sm border border-zinc-800 hover:border-purple-500 p-6 rounded-xl flex flex-col items-center justify-center transition-transform hover:scale-105 shadow-md shadow-zinc-800/30"
+              >
+                <img src={tech.src} alt={tech.name} className="h-10 sm:h-12 mb-2" />
+                <div className="text-base md:text-lg font-medium text-zinc-300 group-hover:text-white transition-colors duration-300">
+                  {tech.name}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className='pt-20'>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-white">Dev Lab</h2>
+          <div className='flex flex-wrap gap-8 justify-start'>
             <motion.div className='flex flex-col items-start gap-4 cursor-[url(/QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
                initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -61,7 +105,7 @@ const Home = () => {
               <img className="rounded-md"src="/Quiztelify.png" alt="" />
               <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Quiztelify</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="https://quiztelify.karnx.dev" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>view Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+              <a href="https://quiztelify.karnx.dev" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
             </motion.div>
             <motion.div className='flex flex-col items-start gap-4 cursor-[url(/logo_ffcs.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
                initial={{ opacity: 0, scale: 0.5 }}
@@ -75,7 +119,7 @@ const Home = () => {
               <img className="rounded-md"src="/FFCS.png" alt="" />
               <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>FFCS-Inator</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Create Your Ideal Timetable</p>
-              <a href="https://ffcs.codechefvit.com" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>view Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+              <a href="https://ffcs.codechefvit.com" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
             </motion.div>
             <motion.div className='flex flex-col items-start gap-4 cursor-[url(/codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
                initial={{ opacity: 0, scale: 0.5 }}
@@ -89,7 +133,7 @@ const Home = () => {
               <img className="rounded-md"src="/papers.png" alt="" />
               <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Papers</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Prepare to excel in your CATs and FATs with CodeChef-VIT’s dedicated repository of past exam papers</p>
-              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>view Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
             </motion.div>
             <motion.div className='flex flex-col items-start gap-4 cursor-[url(/codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
                initial={{ opacity: 0, scale: 0.5 }}
@@ -103,7 +147,7 @@ const Home = () => {
               <img className="rounded-md"src="/forreal.png" alt="" />
               <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>ForReal</h1>
               <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>The AI that exposes AI</p>
-              <a href="https://forreal-deploy-build.vercel.app"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>view Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
+              <a href="https://forreal-deploy-build.vercel.app"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
             </motion.div>
           </div>
         </div>
