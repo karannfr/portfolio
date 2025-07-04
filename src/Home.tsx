@@ -1,4 +1,3 @@
-import Aurora from './components/Aurora'
 import ProfileCard from './components/ProfileCard';
 import { TfiArrowTopRight } from "react-icons/tfi";
 import * as motion from "motion/react-client"
@@ -7,17 +6,48 @@ const Home = () => {
   const scrollToBottom = () => {
   window.scrollTo({
     top: document.documentElement.scrollHeight,
-    behavior: 'smooth', // for a smooth scrolling animation
+    behavior: 'smooth',
     });
   };
+  const devLabProjects = [
+    {
+      name: 'GenCode',
+      description: 'A MERN stack platform where users can generate AI-based competitive programming problems with adjustable difficulty. It includes a code editor, question history with solved/unsolved tracking, and user performance stats.',
+      image: '/gencode.png',
+      href: 'https://gencode.karnx.dev',
+      cursor: '/gencode_cursor.svg',
+    },
+    {
+      name: 'Quiztelify',
+      description: 'A web app for practicing NPTEL course quizzes. Users can select from pre-uploaded courses or upload a PDF to auto-generate question sets. The platform uses Gemini 2.0 and 2.5 APIs for parsing and supports performance tracking.',
+      image: '/Quiztelify.png',
+      href: 'https://quiztelify.karnx.dev',
+      cursor: '/QuiztelifyCursor.svg',
+    },
+    {
+      name: 'FFCS-Inator',
+      description: 'A tool built for VIT students to generate optimal FFCS timetables. It minimizes slot clashes and allows prioritizing courses based on user preferences. Used during course registration to speed up timetable planning.',
+      image: '/FFCS.png',
+      href: 'https://ffcs.codechefvit.com',
+      cursor: '/logo_ffcs.svg',
+    },
+    {
+      name: 'Papers',
+      description: 'A central repository of past CAT and FAT exams curated by CodeChef-VIT. Offers easy access to categorized question papers to help students prepare and revise effectively before exams.',
+      image: '/papers.png',
+      href: 'https://papers.codechefvit.com',
+      cursor: '/codechef.svg',
+    },
+    {
+      name: 'ForReal',
+      description: 'A deep learning-based project that detects AI-generated (DeepFake) media. Built with a CNN model trained on over 40,000 images and 80,000 audio samples. Achieved over 93% accuracy and secured 2nd place at Code4Change VIT.',
+      image: '/forreal.png',
+      href: 'https://forreal-deploy-build.vercel.app',
+      cursor: '/codechef.svg',
+    },
+  ];
   return (
     <>
-      <Aurora
-        colorStops={["#3A29FF", "#66ffee", "#3A29FF"]}
-        blend={0.5}
-        amplitude={0.9}
-        speed={0.5}
-      />
       <div className='flex flex-col gap-8 py-16 px-8 lg:px-16'>
         <div className='flex md:flex-row flex-col md:justify-between items-start gap-16 md:py-36'>
           <div className='flex flex-col md:gap-8 gap-4 items-start'>
@@ -93,62 +123,31 @@ const Home = () => {
         <div className='pt-20'>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-white">Dev Lab</h2>
           <div className='flex flex-wrap gap-8 justify-start'>
-            <motion.div className='flex flex-col items-start gap-4 cursor-[url(/QuiztelifyCursor.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
-               initial={{ opacity: 0, scale: 0.5 }}
+            {devLabProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                className={`flex flex-col items-start gap-4 lg:w-80 xl:w-96 2xl:w-[625px]`}
+                style={{ cursor: `url(${project.cursor}) 12 12, pointer` }}
+                initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{
-                    duration: 0.5,
-                    delay: 0.0,
-                    ease: [0, 0.71, 0.2, 1.01],
+                  duration: 0.5,
+                  delay: 0.0,
+                  ease: [0, 0.71, 0.2, 1.01],
                 }}
               >
-              <img className="rounded-md"src="/Quiztelify.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Quiztelify</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Your Personalized NPTEL Quiz Companion</p>
-              <a href="https://quiztelify.karnx.dev" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </motion.div>
-            <motion.div className='flex flex-col items-start gap-4 cursor-[url(/logo_ffcs.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
-               initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                    duration: 0.5,
-                    delay: 0.0,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-              >
-              <img className="rounded-md"src="/FFCS.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>FFCS-Inator</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Create Your Ideal Timetable</p>
-              <a href="https://ffcs.codechefvit.com" target='_blank' className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </motion.div>
-            <motion.div className='flex flex-col items-start gap-4 cursor-[url(/codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
-               initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                    duration: 0.5,
-                    delay: 0.0,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-              >
-              <img className="rounded-md"src="/papers.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>Papers</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>Prepare to excel in your CATs and FATs with CodeChef-VIT’s dedicated repository of past exam papers</p>
-              <a href="https://papers.codechefvit.com"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </motion.div>
-            <motion.div className='flex flex-col items-start gap-4 cursor-[url(/codechef.svg),_pointer] lg:w-80 xl:w-96 2xl:w-[625px]'
-               initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                    duration: 0.5,
-                    delay: 0.0,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-              >
-              <img className="rounded-md"src="/forreal.png" alt="" />
-              <h1 className='text-xl sm:text-xl md:text-2xl font-semibold'>ForReal</h1>
-              <p className='text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed'>The AI that exposes AI</p>
-              <a href="https://forreal-deploy-build.vercel.app"target='_blank'  className='group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]'>View Project <TfiArrowTopRight className='transition-transform duration-300 ease-in-out group-hover:rotate-45'/></a>
-            </motion.div>
+                <img className="rounded-md" src={project.image} alt={project.name} />
+                <h1 className="text-xl sm:text-xl md:text-2xl font-semibold">{project.name}</h1>
+                <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">{project.description}</p>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  className="group flex flex-row space-between items-center gap-4 px-7 sm:px-12 sm:text-xl py-4 bg-white text-black rounded-md text-sm font-semibold  transition delay-150 duration-300 ease-in-out hover:bg-purple-400 hover:cursor-[url(/hover.svg),_pointer]"
+                >
+                  View Project <TfiArrowTopRight className="transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

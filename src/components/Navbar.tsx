@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useState, useRef } from 'react'
 import { useAnimationFrame } from 'motion/react';
-
+import Aurora from './Aurora';
 const weekDays: Record<string, string> = {
   Mon: "Monday",
   Tue: "Tuesday",
@@ -23,7 +23,6 @@ const Navbar = ({date} :NavbarProps) => {
     const visible = Math.floor(t / 500 ) % 2 === 0;
     ref.current.style.opacity = visible ? '1' : '0';
   })
-  // 'Thu Jun 19 2025 00:31:00 GMT+0530 (India Standard Time)'
   const [weekday, setWeekday] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>(null);
   const [ddmmyy, setDDMMYY] = useState<string | null>(null);
@@ -59,6 +58,7 @@ const Navbar = ({date} :NavbarProps) => {
     setTimeZone(`GMT${sign}${offsetHours}:${offsetMins}`);
   }, [date]);
   return (
+    <>
     <nav className='flex justify-between items-center py-6 px-8 sm:px-16 w-full border-b border-b-white/5 bg-transparent'>
       <div className='bg-purple-400 rounded-[100px] p-1'><img src="./memoji.png" alt="memoji"  className='h-[56px] w-[56px]'/></div>
       <div className='flex flex-row items-center gap-2.5 font-bold'>
@@ -75,6 +75,13 @@ const Navbar = ({date} :NavbarProps) => {
         </div>
       </div>
     </nav>
+    <Aurora
+      colorStops={["#3A29FF", "#66ffee", "#3A29FF"]}
+      blend={0.5}
+      amplitude={0.9}
+      speed={0.5}
+    />
+    </>
   )
 }
 
